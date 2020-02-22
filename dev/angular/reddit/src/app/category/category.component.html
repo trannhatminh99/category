@@ -1,0 +1,12 @@
+<div *ngIf="posts | async as list">
+  <div class="card" style="width: 18rem;" *ngFor="let post of list.data.children">
+
+    <div *ngIf="post.data.thumbnail != 'default' && post.data.thumbnail != 'self' && post.data.thumbnail != 'nsfw'">
+      <img src="{{post.data.thumbnail}}" class="card-img-top" alt="...">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{post.data.title}}</h5>
+      <a [routerLink]="['/detail',post.data.subreddit, post.data.id]" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>

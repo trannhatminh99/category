@@ -1,0 +1,8 @@
+<div *ngIf="detail | async as post" class="card" style="width: 18rem;">
+  <div *ngIf="post[0].data.children[0].data.thumbnail !=  && post[0].data.children[0].data.thumbnail != 'default' && post[0].data.children[0].data.thumbnail != 'self' && post[0].data.children[0].data.thumbnail != 'nsfw'">
+    <img  src="{{post[0].data.children[0].data.thumbnail}}" class="card-img-top" alt="...">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{post[0].data.children[0].data.title}}</h5>
+  </div>
+</div>
